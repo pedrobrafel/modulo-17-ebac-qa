@@ -1,21 +1,21 @@
-class LoginScreen {
-    get #storeAddress() { return $('android.widget.EditText') }
+class menuLogin {
+    get #urlLoja() { return $('android.widget.EditText') }
     get #continue() { return $('id:bottom_button') }
-    get #continueWithStoreCredentials () { return $('id:login_site_creds') }
+    get #continueComCredenciais () { return $('id:login_site_creds') }
     get #username() { return $('android=new UiSelector().text("Username")') }
     get #password() { return $('android=new UiSelector().text("Password")') }
-    get #twoFactorPasswordBtn() { return $('id:login_enter_password') }
+    get #senha2fa() { return $('id:login_enter_password') }
 
-    async setStoreAddress(url) {
-        this.#storeAddress.setValue(url)
+    async insereUrlLoja(url) {
+        this.#urlLoja.setValue(url)
     }
 
     async continue() {
         await this.#continue.click()
     }
 
-    async continueWithStoreCredentials() {
-        await this.#continueWithStoreCredentials.click()
+    async continueComCredenciais() {
+        await this.#continueComCredenciais.click()
     }
 
     async login(username, password) {
@@ -24,16 +24,14 @@ class LoginScreen {
         await this.#continue.click()
     }
 
-    async goToTwoFactorAuth() {
-        await this.#twoFactorPasswordBtn.click()
+    async valida2FA() {
+        await this.#senha2fa.click()
     }
 
     async twoFactorLogin(password) {
         await this.#password.setValue(password)
         await this.#continue.click()
     }
-
-
 }
 
-module.exports = new LoginScreen()
+module.exports = new menuLogin()
