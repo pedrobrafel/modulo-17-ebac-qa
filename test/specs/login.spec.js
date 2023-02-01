@@ -9,9 +9,9 @@ let urlLoja = 'http://lojaebac.ebaconline.art.br/'
 let usuario = 'gerente'
 let senha = 'GD*peToHNJ1#c$sgk08EaYJQ'
 
-describe('Access Admin Panel', () => {
+describe('Acesso e cadastro de produto na loja Ebac-shop', () => {
    
-    it('shoud login with valid credentials', async () => {
+    it('Deve acessar e cadastrar um produto', async () => {
         await menuHome.acessaLogin()
         await menuLogin.insereUrlLoja(urlLoja)
         await menuLogin.continue()
